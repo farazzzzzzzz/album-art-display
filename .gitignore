@@ -1,0 +1,22 @@
+# Local settings and credentials
+config.json
+plex-token
+plex-token.*
+.env
+.env.*
+
+# Artwork and browser data
+cover.jpg
+cover.tmp
+chromium/
+chromium-kiosk/
+
+# Generated files and backups
+__pycache__/
+*.py[cod]
+*.log
+*.bak
+*.tmp
+*~
+.DS_Store
+Thumbs.db
