@@ -1,5 +1,15 @@
 # Raspberry Pi Album Art Display
 
+
+
+<img width="1536" height="1024" alt="04-singularity-display-amp-reframed-2" src="https://github.com/user-attachments/assets/7bd00c6a-da20-48af-8130-260582ec8b90" />
+
+
+
+<img width="1440" height="1080" alt="02-full-setup-reframed-1" src="https://github.com/user-attachments/assets/4fb6d63a-a6cd-4707-986d-4ac703fa160c" />
+
+
+
 A simple album-art screen for my Caldera/Plexamp listening setup: a square HDMI display in a wooden frame, with the current album cover shown fullscreen.
 
 I put this together with a bit of AI-assisted coding and a lot of trial and error. I'm not a developer; I'm sharing it because people were interested to see how it works. It's an early hobby project, and I'm still learning.
