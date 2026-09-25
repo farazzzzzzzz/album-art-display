@@ -2,9 +2,9 @@
 
 A simple album-art screen for my Caldera/Plexamp listening setup: a square HDMI display in a wooden frame, with the current album cover shown fullscreen.
 
-I put this together with AI-assisted coding and a lot of trial and error. I'm not a developer; I'm sharing it because people on Reddit asked how it works. It's an early hobby project, and I'm still learning.
+I put this together with a bit of AI-assisted coding and a lot of trial and error. I'm not a developer; I'm sharing it because people were interested to see how it works. It's an early hobby project, and I'm still learning.
 
-**Status:** adapted from the scripts running on my own Pi. This version moves personal settings into a configuration file and simplifies startup. It has not yet been tested end to end on a fresh Pi. These instructions assume an existing X11 desktop and working Plex/Caldera playback; this is not a complete SD-card image or one-click installer.
+**Status:** adapted from the scripts running on my own Pi. This version moves personal settings into a configuration file and simplifies startup. It hasn't yet been tested end to end on a fresh Pi. These instructions assume an existing X11 desktop and working Plex/Caldera playback; this is not a complete SD-card image or one-click installer.
 
 ## What it does
 
@@ -15,14 +15,14 @@ I put this together with AI-assisted coding and a lot of trial and error. I'm no
 - Requests screen blanking after 60 seconds without playback, adjustable in configuration.
 - Keeps the last artwork visible during brief errors or missing artwork.
 
-The display code does not play or process audio. [Caldera Music](https://caldera.homes/music/) handles playback in my build, with Plexamp on my phone as the remote. Caldera, Plexamp, and Plex Media Server are separate projects and are not included here.
+The display code doesn't play or process audio. [Caldera Music](https://caldera.homes/music/) handles playback in my build, with Plexamp on my phone as the remote. Caldera, Plexamp, and Plex Media Server are separate projects and are not included here.
 
 ## My build
 
 | Part | What I use |
 | --- | --- |
 | Computer | Raspberry Pi 4 |
-| Display | Square HDMI screen in a wooden frame |
+| Display | Waveshare square HDMI screen in a wooden frame |
 | Desktop | X11 with Openbox and LightDM |
 | Music library | Plex Media Server on my NAS |
 | Player | Caldera on the Pi, controlled from Plexamp |
@@ -31,6 +31,13 @@ The display code does not play or process audio. [Caldera Music](https://caldera
 | Headphones | HiFiMAN Edition XS, Sennheiser HD650, and Meze 99 Noir |
 
 The DAC, amplifier, and headphones are just my audio setup; the display scripts do not depend on those particular models. Frame dimensions, a complete parts list, and construction drawings are not included in this first version.
+
+## How it's connected
+
+- **Display:** an HDMI cable connects the Raspberry Pi 4's micro-HDMI output to the Waveshare screen's HDMI input. Chromium on the Pi displays the album artwork fullscreen.
+- **Audio:** the Pi connects by USB to the HiBy R6 III in USB DAC mode. The HiBy feeds the Geshelli amplifier, which drives the headphones.
+
+The screen shows the artwork while audio goes through the separate USB DAC connection. Plexamp on my phone controls Caldera on the Pi.
 
 ## Requirements
 
