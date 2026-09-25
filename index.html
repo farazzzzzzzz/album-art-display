@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Album Display</title>
+  <style>
+    :root {
+      /* Original frame alignment. Use 50% / 50% for a centered display. */
+      --art-size: 95%;
+      --art-left: calc(51% - 11px);
+      --art-top: calc(50% + 5px);
+      --art-brightness: 0.80;
+    }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    * { cursor: none !important; }
+    #cover {
+      width: var(--art-size);
+      height: var(--art-size);
+      object-fit: contain;
+      display: block;
+      position: absolute;
+      left: var(--art-left);
+      top: var(--art-top);
+      transform: translate(-50%, -50%);
+      filter: brightness(var(--art-brightness));
+    }
+  </style>
+</head>
+<body>
+  <img id="cover" alt="">
+  <script>
+    const cover = document.getElementById("cover");
+    function refresh() {
+      const next = new Image();
+      next.onload = () => {
+        cover.src = next.src;
+        setTimeout(refresh, 3000);
+      };
+      next.onerror = () => setTimeout(refresh, 3000);
+      next.src = "cover.jpg?v=" + Date.now();
+    }
+    refresh();
+  </script>
+</body>
+</html>

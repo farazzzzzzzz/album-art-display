@@ -1,0 +1,12 @@
+# Merge these lines into ~/.config/openbox/autostart if using Openbox.
+# Preserve any unrelated commands you already have.
+# Find your output name with xrandr. Rotation is optional.
+# The original wooden-frame build uses HDMI-1 rotated inverted:
+# xrandr --output HDMI-1 --rotate inverted
+
+xset s off
+xset s noblank
+xset dpms 0 0 0
+
+# The user services launch Chromium and unclutter.
+# Do not launch them a second time from this file.

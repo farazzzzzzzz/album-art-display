@@ -1,0 +1,10 @@
+[Unit]
+Description=Update Plex player album artwork
+
+[Service]
+ExecStart=/usr/bin/python3 %h/.config/album-display/update.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

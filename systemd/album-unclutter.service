@@ -1,0 +1,15 @@
+[Unit]
+Description=Hide Mouse Cursor on Album Display
+After=album-kiosk.service
+Wants=album-kiosk.service
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStart=/usr/bin/unclutter -idle 0.1 -root
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

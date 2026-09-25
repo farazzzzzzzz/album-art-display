@@ -1,0 +1,5 @@
+{
+  "plex_url": "http://YOUR_PLEX_SERVER_IP:32400",
+  "player_id": "YOUR_PLAYER_ID",
+  "off_delay_seconds": 60
+}

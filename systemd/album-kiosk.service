@@ -1,0 +1,16 @@
+[Unit]
+Description=Album Artwork Chromium Kiosk
+After=album-display.service
+Wants=album-display.service
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
+ExecStartPre=/bin/sh -c 'for i in $(seq 1 60); do /usr/bin/xset q >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1'
+ExecStart=/bin/sh %h/.config/album-display/start-browser.sh
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
